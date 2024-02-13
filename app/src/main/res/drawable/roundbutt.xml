@@ -1,0 +1,7 @@
+<!-- res/drawable/round_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    android:tint="@color/dark_color">
+    <solid android:color="@color/dark_color" /> <!-- Change the color as per your preference -->
+    <corners android:radius="10dp" /> <!-- Change the corner radius as per your preference -->
+</shape>
