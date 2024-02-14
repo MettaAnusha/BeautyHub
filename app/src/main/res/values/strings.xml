@@ -25,6 +25,14 @@
     <string name="ProfessionalSignup_Btn">Professional SignUp</string>
     <string name="chooseprofessional">Choose a professional</string>
     <string name="forgot">Forgot Password?</string>
+    <string name="forgotpassword">Forgot Password</string>
+    <string name="con">Continue</string>
+    <string name="submit">Submit</string>
+    <string name="countrycode">Please confirm your country code and enter your phone number.</string>
+    <string name="code">Enter OTP</string>
+    <string name="activationtext">We have sent an SMS with an activation code to your phone </string>
+    <string name="timer">send code again in </string>
+
 
 
     <string name="service1_desc">Basic Manicure</string>

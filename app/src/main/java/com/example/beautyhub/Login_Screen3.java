@@ -8,27 +8,28 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class Login_Screen1 extends AppCompatActivity {
+public class Login_Screen3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen1);
-        Button button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_login_screen3);
+
+        Button button = findViewById(R.id.button8);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start Activity2
-                Intent intent = new Intent(Login_Screen1.this, Login_Screen2.class);
+                Intent intent = new Intent(Login_Screen3.this, Login_Screen2.class);
                 startActivity(intent);
             }
         });
-        ImageView arrow = findViewById(R.id.arrowback3);
+        ImageView arrow = findViewById(R.id.arrowback4);
         arrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Start Activity2
-                Intent intent = new Intent(Login_Screen1.this, Onboarding_Screen5.class);
+                Intent intent = new Intent(Login_Screen3.this, Login_Screen2.class);
                 startActivity(intent);
             }
         });
