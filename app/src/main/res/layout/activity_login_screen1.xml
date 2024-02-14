@@ -86,12 +86,13 @@
 
     <EditText
         android:id="@+id/editTextPhone"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="202dp"
+        android:layout_height="27dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="58dp"
         android:background="@drawable/roundbox"
         android:ems="10"
+        android:hint="@string/enterphone"
         android:inputType="phone"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,6 +108,7 @@
         android:layout_marginBottom="23dp"
         android:background="@drawable/roundbox"
         android:ems="10"
+        android:hint="@string/enterpassword"
         android:inputType="numberPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,6 +120,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="55dp"
+        android:hint="@string/enteremail"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/roundbox"
@@ -155,8 +158,8 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="75dp"
+        android:layout_height="32dp"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="35dp"
         android:background="@drawable/roundbox"
