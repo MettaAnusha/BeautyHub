@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Onboarding_Screen5 extends AppCompatActivity {
 
@@ -23,6 +24,25 @@ public class Onboarding_Screen5 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        TextView textView = findViewById(R.id.textView12);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start Activity2
+                Intent intent = new Intent(Onboarding_Screen5.this, CreateAccount_Screen1.class);
+                startActivity(intent);
+            }
+        });
+        TextView textView1 = findViewById(R.id.textView13);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start Activity2
+                Intent intent = new Intent(Onboarding_Screen5.this, CreateAccount_Screen2.class);
+                startActivity(intent);
+            }
+        });
+
 
 
     }

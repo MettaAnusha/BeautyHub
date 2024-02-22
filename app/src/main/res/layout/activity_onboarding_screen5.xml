@@ -79,16 +79,16 @@
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="580dp" />
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center"
-            android:text="@string/create"
-            android:textColor="@color/dark_color"
-            tools:layout_editor_absoluteX="160dp"
-            tools:layout_editor_absoluteY="638dp" />
+<!--        <TextView-->
+<!--            android:id="@+id/textView11"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/create"-->
+<!--            android:textColor="@color/dark_color"-->
+<!--            tools:layout_editor_absoluteX="160dp"-->
+<!--            tools:layout_editor_absoluteY="638dp" />-->
 
         <TextView
             android:id="@+id/textView12"
