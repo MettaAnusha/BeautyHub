@@ -81,8 +81,7 @@
                                 android:id="@+id/servicename1"
                                 android:layout_width="155dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="@string/serviceName1" />
+                                android:gravity="center" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -100,8 +99,7 @@
                                 android:id="@+id/servicename2"
                                 android:layout_width="155dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="@string/serviceName2" />
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -125,8 +123,7 @@
                                 android:id="@+id/servicename3"
                                 android:layout_width="155dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="@string/serviceName3" />
+                                android:gravity="center" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -144,8 +141,7 @@
                                 android:id="@+id/servicename4"
                                 android:layout_width="155dp"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="@string/serviceName4" />
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>

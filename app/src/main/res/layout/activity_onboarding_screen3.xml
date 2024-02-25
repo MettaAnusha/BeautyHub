@@ -41,53 +41,15 @@
             android:text="@string/screen3_subheading" />
 
         <ScrollView
+            android:id="@+id/onboarding2scrollview"
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:layout_height="match_parent">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:layout_width="155dp"
-                    android:layout_height="122dp">
-
-                </ImageView>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/service1_desc">
-
-                    </TextView>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/price">
-
-                    </TextView>
-
-                </LinearLayout>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_arrow_forward_24"
-                    android:layout_gravity="center"
-                    android:id="@+id/arrow"
-                    android:layout_marginLeft="80dp"/>
 
 
-
-            </LinearLayout>
         </ScrollView>
 
     </LinearLayout>

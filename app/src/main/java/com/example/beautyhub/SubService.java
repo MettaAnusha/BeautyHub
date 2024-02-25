@@ -1,0 +1,133 @@
+package com.example.beautyhub;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+import android.util.Log;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SubService {
+
+    private static final String TAG = SubService.class.getSimpleName();
+    private static final String DATA_URL = "http://192.168.150.1/beautyhub/subservice.php";
+
+    // Interface for callback methods
+    public interface ServiceResponseListener {
+        void onSuccess(List<SubService> subservices);
+        void onError(String error);
+    }
+
+    // Method to fetch services from the server
+    public static void getServices(Context context, final ServiceResponseListener listener) {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+                Request.Method.GET,
+                DATA_URL,
+                null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        List<SubService> subservices = new ArrayList<>();
+                        try {
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject jsonObject = response.getJSONObject(i);
+                                Bitmap image = decodeBase64(jsonObject.getString("subserviceimage"));
+                                SubService subservice = new SubService(
+                                        jsonObject.getString("subserviceid"),
+                                        jsonObject.getString("subservicename"),
+                                        jsonObject.getString("servicename"),
+                                        image,
+                                        jsonObject.getString("subservicedescription"),
+                                        jsonObject.getString("subserviceduration"),
+                                        jsonObject.getString("subserviceprice")
+                                );
+                                subservices.add(subservice);
+                            }
+                            listener.onSuccess(subservices); // Notify listener on successful response
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Log.e(TAG, "Error parsing JSON: " + e.getMessage());
+                            listener.onError("Error parsing JSON");
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        Log.e(TAG, "Error fetching data: " + error.getMessage());
+                        listener.onError("Error fetching data");
+                    }
+                }
+        );
+
+        // Add the request to the Volley request queue
+        Volley.newRequestQueue(context.getApplicationContext()).add(jsonArrayRequest);
+    }
+
+    // Method to decode base64 string to Bitmap
+    private static Bitmap decodeBase64(String base64String) {
+        byte[] decodedBytes = Base64.decode(base64String, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
+    }
+    // Member variables
+    private String subserviceId;
+    private String subserviceName;
+
+    private String serviceName;
+    private Bitmap subserviceImage;
+    private String subservicedescription;
+    private String subserviceduration;
+    private String subserviceprice;
+
+    // Constructor
+    public SubService(String subserviceId, String subserviceName,String serviceName, Bitmap subserviceImage, String subservicedescription, String subserviceduration, String subserviceprice) {
+        this.subserviceId = subserviceId;
+        this.subserviceName = subserviceName;
+        this.serviceName = serviceName;
+        this.subserviceImage = subserviceImage;
+        this.subservicedescription = subservicedescription;
+        this.subserviceduration = subserviceduration;
+        this.subserviceprice = subserviceprice;
+    }
+
+    // Getters
+    public String getServiceId() {
+        return subserviceId;
+    }
+
+    public String getServiceName() {
+        return serviceName;
+    }
+    public String getSubServiceName() {
+        return subserviceName;
+    }
+
+    public Bitmap getServiceImage() {
+        return subserviceImage;
+    }
+
+    public String getDescription() {
+        return subservicedescription;
+    }
+
+    public String getDuration() {
+        return subserviceduration;
+    }
+
+    public String getPrice() {
+        return subserviceprice;
+    }
+}
