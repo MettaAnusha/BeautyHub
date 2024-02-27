@@ -21,17 +21,16 @@ import java.util.List;
 
 public class SubService {
 
-    private static final String TAG = SubService.class.getSimpleName();
     private static final String DATA_URL = "http://192.168.150.1/beautyhub/subservice.php";
 
     // Interface for callback methods
-    public interface ServiceResponseListener {
-        void onSuccess(List<SubService> subservices);
+    public interface SubServiceResponseListener {
+        void onSuccess(List<SubService> subServices);
         void onError(String error);
     }
 
     // Method to fetch services from the server
-    public static void getServices(Context context, final ServiceResponseListener listener) {
+    public static void getSubServices(Context context, final SubServiceResponseListener listener) {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET,
                 DATA_URL,
@@ -39,26 +38,24 @@ public class SubService {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        List<SubService> subservices = new ArrayList<>();
+                        List<SubService> subServices = new ArrayList<>();
                         try {
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject jsonObject = response.getJSONObject(i);
-                                Bitmap image = decodeBase64(jsonObject.getString("subserviceimage"));
-                                SubService subservice = new SubService(
+                                SubService subService = new SubService(
                                         jsonObject.getString("subserviceid"),
                                         jsonObject.getString("subservicename"),
                                         jsonObject.getString("servicename"),
-                                        image,
+                                        decodeBase64(jsonObject.getString("subserviceimage")),
                                         jsonObject.getString("subservicedescription"),
                                         jsonObject.getString("subserviceduration"),
                                         jsonObject.getString("subserviceprice")
                                 );
-                                subservices.add(subservice);
+                                subServices.add(subService);
                             }
-                            listener.onSuccess(subservices); // Notify listener on successful response
+                            listener.onSuccess(subServices); // Notify listener on successful response
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.e(TAG, "Error parsing JSON: " + e.getMessage());
                             listener.onError("Error parsing JSON");
                         }
                     }
@@ -67,7 +64,6 @@ public class SubService {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
-                        Log.e(TAG, "Error fetching data: " + error.getMessage());
                         listener.onError("Error fetching data");
                     }
                 }
@@ -82,52 +78,53 @@ public class SubService {
         byte[] decodedBytes = Base64.decode(base64String, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
+
     // Member variables
     private String subserviceId;
     private String subserviceName;
-
     private String serviceName;
     private Bitmap subserviceImage;
-    private String subservicedescription;
-    private String subserviceduration;
-    private String subserviceprice;
+    private String subserviceDescription;
+    private String subserviceDuration;
+    private String subservicePrice;
 
     // Constructor
-    public SubService(String subserviceId, String subserviceName,String serviceName, Bitmap subserviceImage, String subservicedescription, String subserviceduration, String subserviceprice) {
+    public SubService(String subserviceId, String subserviceName, String serviceName, Bitmap subserviceImage, String subserviceDescription, String subserviceDuration, String subservicePrice) {
         this.subserviceId = subserviceId;
         this.subserviceName = subserviceName;
         this.serviceName = serviceName;
         this.subserviceImage = subserviceImage;
-        this.subservicedescription = subservicedescription;
-        this.subserviceduration = subserviceduration;
-        this.subserviceprice = subserviceprice;
+        this.subserviceDescription = subserviceDescription;
+        this.subserviceDuration = subserviceDuration;
+        this.subservicePrice = subservicePrice;
     }
 
     // Getters
-    public String getServiceId() {
+    public String getSubServiceId() {
         return subserviceId;
+    }
+
+    public String getSubServiceName() {
+        return subserviceName;
     }
 
     public String getServiceName() {
         return serviceName;
     }
-    public String getSubServiceName() {
-        return subserviceName;
-    }
 
-    public Bitmap getServiceImage() {
+    public Bitmap getSubServiceImage() {
         return subserviceImage;
     }
 
-    public String getDescription() {
-        return subservicedescription;
+    public String getSubServiceDescription() {
+        return subserviceDescription;
     }
 
-    public String getDuration() {
-        return subserviceduration;
+    public String getSubServiceDuration() {
+        return subserviceDuration;
     }
 
-    public String getPrice() {
-        return subserviceprice;
+    public String getSubServicePrice() {
+        return subservicePrice;
     }
 }
