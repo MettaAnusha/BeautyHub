@@ -12,6 +12,7 @@ public class NetworkTask extends AsyncTask<String, Void, String> {
         String custPassword = params[2];
         String phoneNumber = params[3];
 
+
         // Call your method to send data to the server
         return ServerCommunication.sendDataToServer(custName, custEmail, custPassword, phoneNumber);
     }
