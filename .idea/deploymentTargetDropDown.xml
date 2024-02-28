@@ -5,6 +5,15 @@
       <entry key="Login_Screen1">
         <State />
       </entry>
+      <entry key="Onboarding_Screen2">
+        <State />
+      </entry>
+      <entry key="Onboarding_Screen3">
+        <State />
+      </entry>
+      <entry key="Splash">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>
