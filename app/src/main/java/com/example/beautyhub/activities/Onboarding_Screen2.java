@@ -62,21 +62,54 @@ public class Onboarding_Screen2 extends AppCompatActivity {
             TextView serviceName1 = findViewById(R.id.servicename1);
             serviceImage1.setImageBitmap(service1.getServiceImage());
             serviceName1.setText(service1.getServiceName());
+            serviceImage1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start Activity2
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Eyebrows.class);
+                    startActivity(intent);
+                }
+            });
+
 
             ImageView serviceImage2 = findViewById(R.id.serviceimage2);
             TextView serviceName2 = findViewById(R.id.servicename2);
             serviceImage2.setImageBitmap(service2.getServiceImage());
             serviceName2.setText(service2.getServiceName());
+            serviceImage2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start Activity2
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Massage.class);
+                    startActivity(intent);
+                }
+            });
 
             ImageView serviceImage3 = findViewById(R.id.serviceimage3);
             TextView serviceName3 = findViewById(R.id.servicename3);
             serviceImage3.setImageBitmap(service3.getServiceImage());
             serviceName3.setText(service3.getServiceName());
+            serviceImage3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start Activity2
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Nails.class);
+                    startActivity(intent);
+                }
+            });
 
             ImageView serviceImage4 = findViewById(R.id.serviceimage4);
             TextView serviceName4 = findViewById(R.id.servicename4);
             serviceImage4.setImageBitmap(service4.getServiceImage());
             serviceName4.setText(service4.getServiceName());
+            serviceImage4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Start Activity2
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Hair.class);
+                    startActivity(intent);
+                }
+            });
         }
     }
 

@@ -101,6 +101,18 @@
         <activity
             android:name=".activities.Onboarding_Screen1"
             android:exported="true" />
+        <activity
+            android:name=".activities.Onboarding_Screen3Nails"
+            android:exported="true" />
+        <activity
+            android:name=".activities.Onboarding_Screen3Hair"
+            android:exported="true" />
+        <activity
+            android:name=".activities.Onboarding_Screen3Massage"
+            android:exported="true" />
+        <activity
+            android:name=".activities.Onboarding_Screen3Eyebrows"
+            android:exported="true" />
     </application>
 
 </manifest>
