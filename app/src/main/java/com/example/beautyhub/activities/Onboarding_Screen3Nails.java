@@ -53,7 +53,10 @@ public class Onboarding_Screen3Nails extends AppCompatActivity {
             }
         });
 
+
         recyclerView = findViewById(R.id.recyclerview);
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         subServiceAdapter = new SubServiceNailsAdapter(this, subservicenails);
         recyclerView.setAdapter(subServiceAdapter);

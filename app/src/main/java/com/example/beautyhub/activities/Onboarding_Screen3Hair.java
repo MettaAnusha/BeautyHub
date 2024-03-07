@@ -54,6 +54,7 @@ public class Onboarding_Screen3Hair extends AppCompatActivity {
         });
 
         recyclerView = findViewById(R.id.recyclerview);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         subServiceAdapter = new SubServiceHairAdapter(this, subservicehair);
         recyclerView.setAdapter(subServiceAdapter);

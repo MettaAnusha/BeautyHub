@@ -1,10 +1,12 @@
 package com.example.beautyhub.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -65,6 +67,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
             serviceImage1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
+                    preferences.edit().putString("selected_service_name", service1.getServiceName()).apply();
                     // Start Activity2
                     Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Eyebrows.class);
                     startActivity(intent);
@@ -79,6 +83,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
             serviceImage2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
+                    preferences.edit().putString("selected_service_name", service2.getServiceName()).apply();
                     // Start Activity2
                     Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Massage.class);
                     startActivity(intent);
@@ -92,6 +98,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
             serviceImage3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
+                    preferences.edit().putString("selected_service_name", service3.getServiceName()).apply();
                     // Start Activity2
                     Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Nails.class);
                     startActivity(intent);
@@ -105,6 +113,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
             serviceImage4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
+                    preferences.edit().putString("selected_service_name", service4.getServiceName()).apply();
                     // Start Activity2
                     Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Hair.class);
                     startActivity(intent);

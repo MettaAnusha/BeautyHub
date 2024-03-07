@@ -101,7 +101,7 @@ public class Login_Screen1 extends AppCompatActivity implements NetworkTaskLogin
             if (success == 1) {
                 // Login successful
                 Log.d("Login_Screen1", "Login successful");
-                Intent intent = new Intent(Login_Screen1.this, Login_Screen2.class);
+                Intent intent = new Intent(Login_Screen1.this, Onboarding_Screen2.class);
                 startActivity(intent);
             } else {
                 // Login failed

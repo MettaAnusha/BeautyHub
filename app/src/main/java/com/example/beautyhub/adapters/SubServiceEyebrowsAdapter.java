@@ -1,6 +1,7 @@
 package com.example.beautyhub.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beautyhub.R;
+import com.example.beautyhub.activities.Onboarding_Screen4;
 import com.example.beautyhub.servercommunication.SubServiceEyebrows;
 
 import java.util.ArrayList;
@@ -39,6 +41,17 @@ public class SubServiceEyebrowsAdapter extends RecyclerView.Adapter<SubServiceEy
     public void onBindViewHolder(@NonNull SubServiceEyebrowsViewHolder holder, int position) {
         SubServiceEyebrows subserviceEyebrows = subserviceeyebrows.get(position);
         holder.bind(subserviceEyebrows);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(mContext, Onboarding_Screen4.class);
+
+
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
