@@ -86,9 +86,9 @@ public class Onboarding_Screen4 extends AppCompatActivity implements NetworkTask
                 if (object.has("proimage")) {
                     Bitmap image = decodeBase64(object.getString("proimage"));
                     professionals.add(new Professionals(object.getString("proname"), image, object.getString("rating"), object.getString("profession")));
-                    Log.d("FetchedData", "Professional Name: " + object.getString("proname"));
-                    Log.d("FetchedData", "Rating: " + object.getString("rating"));
-                    Log.d("FetchedData", "Profession: " + object.getString("profession"));
+                    Log.d("FetchedData", "Professional Name in onboarding 4 prolist: " + object.getString("proname"));
+                    Log.d("FetchedData", "Rating in onboarding 4 prolist: " + object.getString("rating"));
+                    Log.d("FetchedData", "Profession in onboarding 4 prolist: " + object.getString("profession"));
                 }
             }
             professionalsAdapter.notifyDataSetChanged();

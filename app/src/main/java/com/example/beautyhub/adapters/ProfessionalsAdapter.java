@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beautyhub.R;
 import com.example.beautyhub.activities.Booking_Screen1;
-import com.example.beautyhub.activities.Onboarding_Screen4;
 import com.example.beautyhub.servercommunication.Professionals;
 
 import java.util.ArrayList;
@@ -51,7 +50,7 @@ public class ProfessionalsAdapter extends RecyclerView.Adapter<ProfessionalsAdap
                 String proname=proProfessionals.getProName();
                 editor.putString("proname", proname);
 
-                Log.d("ProfessionalAdapter1","ProfeessionalAdapter"+proname);
+                Log.d("ProfessionalAdapter1","ProfessionalAdapter1"+proname);
                 editor.apply();
 
 

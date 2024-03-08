@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,11 @@ public class Login_Screen1 extends AppCompatActivity implements NetworkTaskLogin
         editTextPassword = findViewById(R.id.editTextNumberPassword);
         editTextPhone = findViewById(R.id.editTextPhone);
         buttonLogin = findViewById(R.id.button5);
+        String[] countryCodes = {"+1", "+61", "+44", "+91"};
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryCodes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override

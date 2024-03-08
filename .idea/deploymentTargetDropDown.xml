@@ -2,13 +2,16 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="Booking_Screen4">
+        <State />
+      </entry>
       <entry key="Login_Screen1">
         <State />
       </entry>
-      <entry key="Onboarding_Screen2">
+      <entry key="Login_Screen2">
         <State />
       </entry>
-      <entry key="Onboarding_Screen3">
+      <entry key="Onboarding_Screen2">
         <State />
       </entry>
       <entry key="Splash">
