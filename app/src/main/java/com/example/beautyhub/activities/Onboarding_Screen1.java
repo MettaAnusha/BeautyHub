@@ -29,7 +29,7 @@ public class Onboarding_Screen1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start Activity2
-                Intent intent = new Intent(Onboarding_Screen1.this, CreateAccount_Screen1.class);
+                Intent intent = new Intent(Onboarding_Screen1.this, Onboarding_Screen5.class);
                 startActivity(intent);
             }
         });

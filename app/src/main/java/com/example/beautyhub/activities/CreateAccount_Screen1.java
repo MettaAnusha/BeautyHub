@@ -8,9 +8,11 @@ import com.example.beautyhub.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 public class CreateAccount_Screen1 extends AppCompatActivity {
     private EditText editTextName;
@@ -26,6 +28,11 @@ public class CreateAccount_Screen1 extends AppCompatActivity {
         editTextEmail = findViewById(R.id.editTextTextEmailAddress2);
         editTextPassword = findViewById(R.id.editTextTextPassword);
         editTextPhone = findViewById(R.id.editTextPhone3);
+        String[] countryCodes = {"+1", "+61", "+44", "+91"};
+        Spinner spinner = findViewById(R.id.spinner3);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countryCodes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
         backarrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

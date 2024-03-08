@@ -14,11 +14,7 @@
         android:theme="@style/Base.Theme.BeautyHub"
         tools:targetApi="31"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".activities.Booking_Screen5"
-            android:exported="true">
 
-        </activity>
         <activity
             android:name=".activities.Booking_Screen4"
             android:exported="true">
@@ -40,16 +36,7 @@
             android:exported="true">
 
         </activity>
-        <activity
-            android:name=".activities.MainPage_Screen2"
-            android:exported="true">
 
-        </activity>
-        <activity
-            android:name=".activities.MainPage_Screen1"
-            android:exported="true">
-
-        </activity>
         <activity
             android:name=".activities.CreateAccount_Screen1"
             android:exported="true">
@@ -101,18 +88,7 @@
         <activity
             android:name=".activities.Onboarding_Screen1"
             android:exported="true" />
-        <activity
-            android:name=".activities.Onboarding_Screen3Nails"
-            android:exported="true" />
-        <activity
-            android:name=".activities.Onboarding_Screen3Hair"
-            android:exported="true" />
-        <activity
-            android:name=".activities.Onboarding_Screen3Massage"
-            android:exported="true" />
-        <activity
-            android:name=".activities.Onboarding_Screen3Eyebrows"
-            android:exported="true" />
+
     </application>
 
 </manifest>

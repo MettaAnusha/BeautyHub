@@ -1,6 +1,9 @@
 package com.example.beautyhub.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beautyhub.R;
+import com.example.beautyhub.activities.Booking_Screen1;
+import com.example.beautyhub.activities.Onboarding_Screen4;
 import com.example.beautyhub.servercommunication.Professionals;
 
 import java.util.ArrayList;
@@ -38,6 +43,25 @@ public class ProfessionalsAdapter extends RecyclerView.Adapter<ProfessionalsAdap
     public void onBindViewHolder(@NonNull ProfessionalsViewHolder holder, int position) {
         Professionals proProfessionals = professionals.get(position);
         holder.bind(proProfessionals);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences = mContext.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                String proname=proProfessionals.getProName();
+                editor.putString("proname", proname);
+
+                Log.d("ProfessionalAdapter1","ProfeessionalAdapter"+proname);
+                editor.apply();
+
+
+
+                Intent intent = new Intent(mContext, Booking_Screen1.class);
+
+
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

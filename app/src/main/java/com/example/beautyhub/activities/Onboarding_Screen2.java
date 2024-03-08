@@ -15,6 +15,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.beautyhub.R;
+import com.example.beautyhub.asynctasks.NetworkTask1;
+import com.example.beautyhub.asynctasks.NetworkTask3;
 import com.example.beautyhub.servercommunication.Service;
 
 import org.json.JSONArray;
@@ -38,15 +40,7 @@ public class Onboarding_Screen2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding_screen2);
-        Button button2 = findViewById(R.id.button3);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Start Activity2
-                Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3.class);
-                startActivity(intent);
-            }
-        });
+
 
         // Fetch service data from the API
         new FetchServiceDataTask().execute("http://192.168.150.1/beautyhub/service.php");
@@ -69,8 +63,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
                 public void onClick(View v) {
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
                     preferences.edit().putString("selected_service_name", service1.getServiceName()).apply();
-                    // Start Activity2
-                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Eyebrows.class);
+                    String servicename= serviceName1.getText().toString();
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3.class);
                     startActivity(intent);
                 }
             });
@@ -86,7 +80,7 @@ public class Onboarding_Screen2 extends AppCompatActivity {
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
                     preferences.edit().putString("selected_service_name", service2.getServiceName()).apply();
                     // Start Activity2
-                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Massage.class);
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3.class);
                     startActivity(intent);
                 }
             });
@@ -101,7 +95,7 @@ public class Onboarding_Screen2 extends AppCompatActivity {
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
                     preferences.edit().putString("selected_service_name", service3.getServiceName()).apply();
                     // Start Activity2
-                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Nails.class);
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3.class);
                     startActivity(intent);
                 }
             });
@@ -115,8 +109,8 @@ public class Onboarding_Screen2 extends AppCompatActivity {
                 public void onClick(View v) {
                     SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(Onboarding_Screen2.this);
                     preferences.edit().putString("selected_service_name", service4.getServiceName()).apply();
-                    // Start Activity2
-                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3Hair.class);
+
+                    Intent intent = new Intent(Onboarding_Screen2.this,Onboarding_Screen3.class);
                     startActivity(intent);
                 }
             });

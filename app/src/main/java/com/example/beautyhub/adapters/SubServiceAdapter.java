@@ -1,6 +1,8 @@
 package com.example.beautyhub.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beautyhub.R;
+import com.example.beautyhub.activities.Booking_Screen1;
+import com.example.beautyhub.activities.Onboarding_Screen4;
 import com.example.beautyhub.servercommunication.SubService;
 
 import java.util.ArrayList;
@@ -38,6 +42,23 @@ public class SubServiceAdapter extends RecyclerView.Adapter<SubServiceAdapter.Su
     public void onBindViewHolder(@NonNull SubServiceViewHolder holder, int position) {
         SubService subService = subservice.get(position);
         holder.bind(subService);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences preferences = mContext.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("subservicename", subService.getSubServiceName());
+                editor.putString("subserviceprice", subService.getSubServicePrice());
+                editor.apply();
+
+
+
+                Intent intent = new Intent(mContext, Onboarding_Screen4.class);
+
+
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

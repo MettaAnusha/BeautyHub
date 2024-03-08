@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.beautyhub.R;
+import com.example.beautyhub.asynctasks.NetworkTask4;
 import com.example.beautyhub.asynctasks.NetworkTaskLogin;
 import com.example.beautyhub.servercommunication.Professionals;
 import com.example.beautyhub.adapters.ProfessionalsAdapter;
@@ -54,6 +55,8 @@ public class Onboarding_Screen4 extends AppCompatActivity implements NetworkTask
         String selectedServiceName = preferences.getString("selected_service_name", "Default Service Name");
         Log.d("SelectedServiceName", "Selected Service Name: " + selectedServiceName);
         new NetworkTask1(this).execute(selectedServiceName);
+
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
