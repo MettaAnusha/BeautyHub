@@ -108,6 +108,7 @@
         android:layout_marginBottom="23dp"
         android:background="@drawable/roundbox"
         android:ems="10"
+        android:inputType="textPassword"
         android:hint="@string/enterpassword"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"

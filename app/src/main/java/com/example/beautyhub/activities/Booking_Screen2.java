@@ -38,7 +38,8 @@ public class Booking_Screen2 extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         String date = preferences.getString("selectedDate", "");
         String time = preferences.getString("selectedTime", "");
-        String proname= preferences.getString("professionalName","");
+        String proname= preferences.getString("proname","");
+        Log.d("proname","pronameinscreen2"+proname);
         String subservicename=preferences.getString("subservicename","");
         String subserviceprice=preferences.getString("subserviceprice","");
 
